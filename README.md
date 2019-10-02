@@ -24,7 +24,7 @@ Best Case : O(n) (When array is already sorted in increasing order) Worst Case :
 Space Complexity :
 O(1)
 
-4)Merge Sort : - It is a outplace , stable sorting algo which uses the property of divide and conquor.It uses the concept of recursion. Here the idea is to combine the two Left and Right sorted array of size nearly equal to half of size of given unsorted array to form a sorted array.
+4) Merge Sort : - It is a outplace , stable sorting algo which uses the property of divide and conquor.It uses the concept of recursion. Here the idea is to combine the two Left and Right sorted array of size nearly equal to half of size of given unsorted array to form a sorted array.
 Time Complexity : 
 Best Case : O(nlogn) Worst Case : O(nlogn) Avg Case : O(nlogn)
 Space Complexity :
