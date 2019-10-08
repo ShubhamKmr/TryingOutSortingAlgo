@@ -29,3 +29,10 @@ Time Complexity :
 Best Case : O(nlogn) Worst Case : O(nlogn) Avg Case : O(nlogn)
 Space Complexity :
 O(n)
+
+5) Quick Sort :- It is a inplace , unstable sorting algo which uses the property of divide and conquor and recursion.Here the major idea is to select an element in array as pivot and put it in its belonging place ie all element lesser should be left of pivot and all element greater should be right of the pivot further 2 recursive calls divde the problem on the basis of pivot index found.Quick sort perform well when the array is divded in equal half.if the element are already sorted than array can't be further divide in 2 equal half.Hence it is the worst case time complexity scenario.So, to divide the array in equal or nearly equal half a trick is used random no in array is swapped with the pivot to get nearly two equal half in already sorted array.
+Time Complexity :
+Best Case : O(nlogn) Worst Case : O(n^2) ( which can be minized by Randomized Partitioning ) Avg Case : O(nlogn)
+Space Complexity:
+Avg Case : O(logn) Worst Case : O(n) ( which can be minimized by Randomized Partitioning )
+Hence Randomized Quick Sort is partically used over other algo in bulid-in sorting function in languages.Because of O(nlogn) and O(logn) as their worst case time and space complexity respectively.

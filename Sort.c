@@ -7,6 +7,8 @@ void BubbleSort(int Array[],int size);
 void InsertionSort(int Array[],int size);
 void MergeSort(int Array[],int size);
 void Merge(int LeftArray[] , int LeftArraySize ,int RightArray[] ,int RightArraySize, int Array[]);
+int Partition(int Array[],int left , int right);
+void QuickSort(int A[],int left,int right);
 int main ()
 {
 	int  i = 0;
@@ -21,6 +23,12 @@ int main ()
 	printf("\n** SORTED ARRAY OF MERGE SORT**\n");	
 	for(i = 0 ; i < SIZE ; i++)    
 		printf("%d\t",Array4[i]);
+	int Array5[SIZE] = {-100,99,-10,0,0,64,1,9,-94,2,11};
+	QuickSort(Array5,0,SIZE-1);
+	printf("\n** SORTED ARRAY OF QUICK SORT **\n");	
+	for(i = 0 ; i < SIZE ; i++)    
+		printf("%d\t",Array5[i]);
+
 	return 1;
 }
 
@@ -140,4 +148,37 @@ void Merge(int LSortedArray[] ,int LeftArraySize ,int RSortedArray[] ,int RightA
 	{
 		Array[k++] = RSortedArray[j++];
 	}
+}
+
+int Partition(int Array[],int left , int right)
+{
+	int i , pivot, temp ,pindex;
+	pivot = Array[right];
+	pindex = left;
+	for (i = left ; i < right ; i++)
+	{
+		if (Array[i] <= pivot)
+		{
+			temp = Array[i];
+			Array[i] = Array[pindex];
+			Array[pindex] = temp;
+			pindex++;	
+		}
+	}
+	temp = Array[right];
+	Array[right] = Array[pindex];
+	Array[pindex] = temp;
+
+	return pindex; 
+}
+
+void QuickSort(int Array[],int left,int right)
+{
+
+	if (left < right)
+	{
+		int pindex = Partition(Array,left,right);
+		QuickSort(Array,left,pindex -1);
+		QuickSort(Array,pindex + 1,right);
+	}			
 }
