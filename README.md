@@ -36,3 +36,9 @@ Best Case : O(nlogn) Worst Case : O(n^2) ( which can be minized by Randomized Pa
 Space Complexity:
 Avg Case : O(logn) Worst Case : O(n) ( which can be minimized by Randomized Partitioning )
 Hence Randomized Quick Sort is partically used over other algo in bulid-in sorting function in languages.Because of O(nlogn) and O(logn) as their worst case time and space complexity respectively.
+
+6) Binary Search : - It is a divide and conquor approach. where the given array should be sorted in order to apply Binary search.Here the mid element is found and depending whether the no to be searched lies in left half or right half of the mid element .The lower and higher bound of the array or sub-array is adjusted.
+Time Complexity : 
+O(logn)
+Space Complexity :  
+O(1)

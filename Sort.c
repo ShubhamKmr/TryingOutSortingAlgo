@@ -8,7 +8,8 @@ void InsertionSort(int Array[],int size);
 void MergeSort(int Array[],int size);
 void Merge(int LeftArray[] , int LeftArraySize ,int RightArray[] ,int RightArraySize, int Array[]);
 int Partition(int Array[],int left , int right);
-void QuickSort(int A[],int left,int right);
+void QuickSort(int Array[],int left,int right);
+int BinarySearch(int Array[],int left,int right,int no);
 int main ()
 {
 	int  i = 0;
@@ -28,7 +29,9 @@ int main ()
 	printf("\n** SORTED ARRAY OF QUICK SORT **\n");	
 	for(i = 0 ; i < SIZE ; i++)    
 		printf("%d\t",Array5[i]);
-
+	int index = BinarySearch(Array5,0,SIZE-1,0);
+	if (index != -1 )printf("Number found in Array is at index %d\n",index);
+	else printf("Number Not found :-(\n"); 
 	return 1;
 }
 
@@ -181,4 +184,16 @@ void QuickSort(int Array[],int left,int right)
 		QuickSort(Array,left,pindex -1);
 		QuickSort(Array,pindex + 1,right);
 	}			
+}
+
+int BinarySearch(int Array[],int left,int right,int no)
+{
+	if (left <= right)
+	{
+		int mid =  left + (right - left)/2;
+		if (Array[mid] == no) return mid;
+		else if (no < Array[mid])BinarySearch(Array,left,mid-1,no);
+		else if (no > Array[mid])BinarySearch(Array,mid+1,right,no); 
+	}
+	else return -1;
 }
